@@ -1,1 +1,0 @@
-# wolfgang is a sns 
