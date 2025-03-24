@@ -1,0 +1,35 @@
+{% load static %}  <!-- Подключение статики -->
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+    </style>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <h1 class="sym-container1">^ ^</h1>
+    <div class="container">
+        <div class="logo">login</div>
+        <div class="container-inputs">
+            <form method="post" action="">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="username" class="input-field" required>
+                <input type="password" name="password" placeholder="password" class="input-field" required>
+                <div class="social-container">
+                    <div class="social-button">
+                        <a href="{% provider_login_url 'google' process='login' %}" class="stars-btn">G</a>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">gotcha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h1 class="sym-container2">^ ^</h1>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% load static %}  <!-- Подключение статики -->
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+    </style>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+    
+    <div class="container">
+    
+        <div class="logo">registration</div>
+        <div class='container-custom-size-from'>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="username" class="input-field" required>
+                <div>
+                    <h2 class="text-custom">Required. 150 characters or fewer. 
+                        Letters, digits and @/./+/-/_ only.<h2>
+                </div>
+                <input type="text" name="phone" placeholder="phone number" class="input-field" required>
+                <input type="text" name="birth_date" placeholder="birthday" class="input-field" required>
+                <input type="password" name="password1" placeholder="password" class="input-field" required>
+                <div>
+                    <h2 class="text-custom">Can’t be too similar to your other personal information 
+                        and can’t be a commonly used password or can’t be entirely numeric. 
+                        Must contain at least 8 characters;</h2>
+                </div>
+                <input type="password" name="password2" placeholder="password (again)" class="input-field" required>
+                <div>
+                    <h2 class="text-custom">Enter the same password as before, for verification.<h2>
+                </div>
+                <div class="go-container">
+                
+                    <a href="{% provider_login_url 'google' process='login' %}" class="google-btn"
+                    style="line-height: 28px;">
+                        registration w/ GOOGLE
+                    </a>
+                    
+                    <button type="submit" class="go-btn">gotcha</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <h1 class="sym-container1">^ ^</h1>
+    <h1 class="sym-container2">^ ^</h1>
+</body>
+</html> 

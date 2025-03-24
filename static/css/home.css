@@ -1,0 +1,153 @@
+body {
+    background: #804D74;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Jersey 10", sans-serif;
+    overflow: hidden;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.jersey-10-regular {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    font-size: 96px;
+    font-family: 'Jersey 10', sans-serif;
+    background: #EECBE6;
+    color: #57264D;
+    border: 10px solid #57264D;
+    padding: 30px;
+    text-align: center;
+    justify-content: center; /* Выравнивает текст по центру */
+    height: 70%; /* Дает блоку высоту для центрирования */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 70%;
+    transition: transform 0.5s ease-in-out;
+    
+    
+}
+.menu-active .logo {
+    transform: translateX(-80px); /* Смещение влево */
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-right: -70px;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.menu-active .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn {
+    width: 180px;
+    height: 60px;
+    background: #57264D;
+    color: #F8E2F3;
+    border: 3px solid #F8E2F3;
+    font-size: 48px;
+    font-family: 'Jersey 10', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    text-decoration: none; /* Убирает подчеркивание */
+}
+
+
+.btn:hover {
+    background: #F5E7F2;
+    color: #57264D;
+    -webkit-text-stroke: 1px #9B8A97;
+}
+
+@keyframes moveBackAndForth1 {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveBackAndForth2 {
+    0%, 100% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(180deg);
+    }
+}
+
+.sym1{
+
+    font-family: 'Jersey 10';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    color: #F8E2F3;
+    margin: 2px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 1px #57264D;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    animation: moveBackAndForth1 1s infinite alternate ease-in-out;
+}
+
+.sym2{
+    font-family: 'Jersey 10';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    color: #F8E2F3;
+    margin: 2px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 1px #57264D;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    transform: rotate(180deg);
+    animation: moveBackAndForth2 1s infinite alternate ease-in-out;
+}
+
+
+
+/* Класс, который двигает логотип и делает кнопки видимыми */
+.expanded {
+    transform: translateX(-80px); /* Двигаем влево */
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+

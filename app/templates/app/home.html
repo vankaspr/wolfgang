@@ -1,0 +1,25 @@
+{% load static %}  <!-- Подключение статики -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+    </style>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div id="logo" class="logo">Wolf Gang</div>
+        <div id="menu" class="menu hidden">
+            <h1 class='sym1'>^ ^</h1>
+            <a href="{% url 'login' %}" class="btn">log</a>
+            <a href="{% url 'register' %}"class="btn">reg</a>
+            <h1 class='sym2'>^ ^</h1>
+        </div>
+    </div>
+
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

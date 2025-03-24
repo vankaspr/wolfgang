@@ -1,0 +1,4 @@
+../tg_settings.txt
+env
+.env
+db.sqlite3
